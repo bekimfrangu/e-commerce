@@ -28,8 +28,8 @@ class AdminAddHomeSliderComponent extends Component
         $this->validate([
             'title'=>'required',
             'subtitle'=>'required',
-            'price'=>'required',
-            'link'=>'required',
+            'price'=>'required|numeric',
+            'link'=>'required'
         ]);
 
         $slider = new HomeSlider;

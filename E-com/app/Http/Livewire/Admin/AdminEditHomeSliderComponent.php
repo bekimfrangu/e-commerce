@@ -38,6 +38,13 @@ class AdminEditHomeSliderComponent extends Component
 
     public function editHomeslider() 
     {
+        $this->validate([
+            'title'=>'required',
+            'subtitle'=>'required',
+            'price'=>'required|numeric',
+            'link'=>'required'
+        ]);
+        
             $slider = HomeSlider::findorFail($this->slider_id);
             $slider->title = $this->title;
             $slider->subtitle = $this->subtitle;

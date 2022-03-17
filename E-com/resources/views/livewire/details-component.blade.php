@@ -34,11 +34,9 @@
                             </div>
                             <h2 class="product-name">{{$product->name}}</h2>
                             <div class="short-desc">
-                                {{$product->short_description}}
+                                {!! $product->short_description !!}
                             </div>
-                            <div class="wrap-social">
-                            	<a class="link-socail" href="#"><img src="{{asset('assets/images/social-list.png') }}" alt=""></a>
-                            </div>
+                           
 							@if($product->sale_price > 0)
 								<div class="wrap-price"><span class="product-price">${{$product->sale_price}}</span></div>
 							@else
@@ -59,21 +57,18 @@
 							</div>
 							<div class="wrap-butons">
 								<a href="#" class="btn add-to-cart" wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})">Add to Cart</a>
-                                <div class="wrap-btn">
-                                    <a href="#" class="btn btn-compare">Add Compare</a>
-                                    <a href="#" class="btn btn-wishlist">Add Wishlist</a>
-                                </div>
+                            
 							</div>
 						</div>
 						<div class="advance-info">
 							<div class="tab-control normal">
 								<a href="#description" class="tab-control-item active">description</a>
 								<a href="#add_infomation" class="tab-control-item">Addtional Infomation</a>
-								<a href="#review" class="tab-control-item">Reviews</a>
+							
 							</div>
 							<div class="tab-contents">
 								<div class="tab-content-item active" id="description">
-								{{$product->description}}
+								{!! $product->description !!}
 								</div>
 								<div class="tab-content-item " id="add_infomation">
 									<table class="shop_attributes">
@@ -118,51 +113,7 @@
 											</ol>
 										</div><!-- #comments -->
 
-										<div id="review_form_wrapper">
-											<div id="review_form">
-												<div id="respond" class="comment-respond"> 
-
-													<form action="#" method="post" id="commentform" class="comment-form" novalidate="">
-														<p class="comment-notes">
-															<span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
-														</p>
-														<div class="comment-form-rating">
-															<span>Your rating</span>
-															<p class="stars">
-																
-																<label for="rated-1"></label>
-																<input type="radio" id="rated-1" name="rating" value="1">
-																<label for="rated-2"></label>
-																<input type="radio" id="rated-2" name="rating" value="2">
-																<label for="rated-3"></label>
-																<input type="radio" id="rated-3" name="rating" value="3">
-																<label for="rated-4"></label>
-																<input type="radio" id="rated-4" name="rating" value="4">
-																<label for="rated-5"></label>
-																<input type="radio" id="rated-5" name="rating" value="5" checked="checked">
-															</p>
-														</div>
-														<p class="comment-form-author">
-															<label for="author">Name <span class="required">*</span></label> 
-															<input id="author" name="author" type="text" value="">
-														</p>
-														<p class="comment-form-email">
-															<label for="email">Email <span class="required">*</span></label> 
-															<input id="email" name="email" type="email" value="" >
-														</p>
-														<p class="comment-form-comment">
-															<label for="comment">Your review <span class="required">*</span>
-															</label>
-															<textarea id="comment" name="comment" cols="45" rows="8"></textarea>
-														</p>
-														<p class="form-submit">
-															<input name="submit" type="submit" id="submit" class="submit" value="Submit">
-														</p>
-													</form>
-
-												</div><!-- .comment-respond-->
-											</div><!-- #review_form -->
-										</div><!-- #review_form_wrapper -->
+									
 
 									</div>
 								</div>

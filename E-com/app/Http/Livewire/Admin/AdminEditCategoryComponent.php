@@ -31,7 +31,7 @@ class AdminEditCategoryComponent extends Component
     {
         $this->validate([
             'name'=>'required',
-            'slug'=>'required'
+            'slug'=>'required|unique:categories'
         ]);
         $category = Category::find($this->category_id);
         $category->name = $this->name;
